@@ -1,0 +1,222 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+body,html{
+
+  width: 100%;
+  height: 100%;
+  /* background-color: rgb(255, 255, 255); */
+  background-image: url('https://get.wallhere.com/photo/landscape-forest-deer-artwork-pine-trees-illustration-mountains-minimalism-animals-1189796.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  /* padding-top: 20px; */
+}
+
+.interface{
+
+  background-color: rgba(0, 0, 0, 0.516);
+  
+  width: 700px;
+  height: 500px;
+  border-radius: 20px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  
+  padding: 10px;
+  
+}
+
+.notodo{
+  color: rgb(255, 255, 255);
+  /* background-color:transparent; */
+  font-weight: bold;
+  margin-top: 20%;
+  font-size: 20px;
+  /* width: 300px; */
+  animation: notask infinite alternate-reverse 1s both;
+  transition: .2s;
+}
+
+@keyframes notask {
+  from{
+
+    opacity: 0;
+  }
+  to{
+    opacity: 1;color: rgb(249, 249, 249);
+    
+  }
+  
+}
+
+
+.todoform{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.strike{
+  text-decoration:line-through;
+  color: rgb(180, 31, 31);
+  /* background-color: rgb(79, 182, 79); */
+}
+
+.todoform input[type=text]{
+
+  width: 300px;
+  height: 40px;
+  outline: none;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  /* position: relative;   */
+  margin: 10px 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  /* padding: 5px; */
+  font-size: 20px;
+  /* z-index: 2; */
+  /* font-size: large; */
+
+}
+
+
+.todoform input[type=submit]{
+
+  width: 80px;
+  height: 40px;
+  margin-left: -20px;
+  /* z-index: 4; */
+  border-radius: 0px 10px 10px 0;
+  color: white;
+  background-color: rgb(17, 156, 86);
+  font-weight: bold;
+  outline: none;
+  border: none;
+  transition: .2s all ease-in;
+}
+
+.todoform input[type=submit]:hover{
+
+  background-color:rgb(9, 110, 60) ;
+
+}
+
+.todoitem{
+
+  width: 400px;
+  height: 40px;
+  /* color: red; */
+  display: flex;
+  border-radius: 10px;
+  /* padding-left: 10px; */
+  /* justify-content: center; */
+  background-color: rgb(255, 255, 255);
+  align-items: center;  
+  padding: 2px;
+  overflow: hidden;
+  position: relative;
+  margin: 5px 0;
+  animation: task both 2s ;
+
+  
+
+}
+
+@keyframes task {
+  
+  from{
+
+    /* transform: translateY(-40px); */
+    opacity: 0;
+    /* filter: blur(5px); */
+  }
+
+  to{
+    /* transform: translateY(0px); */
+    opacity: 1;
+    /* filter: blur(0px); */
+
+  }
+}
+.todoitem input{
+  width: 70%;
+  height: 100%;
+  font-weight: bold;
+  font-size: 20px;
+  outline: none;
+  border: none;
+}
+
+.todoitem button{
+
+  width: 10%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 10px;
+  
+  
+}
+
+
+
+
+.todoitem button:active{
+  /* background-color: rgb(47, 141, 144); */
+  scale: 0.85;
+}
+
+
+.todoitem input[type=checkbox]{
+
+  width: 10%;
+  height: 50%;
+}
+
+section{
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+
+  /* gap: 5px; */
+  flex-direction: column;
+  overflow-y: scroll;
+  padding: 5px 0;
+  /* height: fit-content; */
+}
+
+::-webkit-scrollbar{
+  display: none ;
+}
+
+@media (max-width:720px) {
+
+  .interface{
+    width: 99vw;
+  }
+  .todoitem{
+    width: 95vw;
+  }
+  .todoform input[type=submit]{
+    height: 42px;
+  }
+  
+}
