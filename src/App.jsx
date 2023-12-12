@@ -73,7 +73,7 @@ todos.map(todo =>
   <div key={todo.id}>
   
 
-   <TodoItem  func={addTodo}  todo = {todo} />
+   <TodoItem    todo = {todo} />
    
    </div> )
 
