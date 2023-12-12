@@ -11,7 +11,7 @@ function App() {
 
   const addTodo = (todo) => {
 
-    settodos((prev) => [{id:Date.now(),...todo},...todos])
+    settodos((prev) => [{id:Date.now(),...todo},...prev])
  
   }
 
@@ -73,7 +73,7 @@ todos.map(todo =>
   <div key={todo.id}>
   
 
-   <TodoItem  todos = {todo} />
+   <TodoItem  func={addTodo}  todo = {todo} />
    
    </div> )
 

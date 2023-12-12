@@ -1,23 +1,23 @@
 import React,{useState} from 'react'
 import { useTodo } from '../Context/TodoContetx'
 
-function TodoItem({todos}) {
+function TodoItem({todo}) {
 
     const [isTodoEditable,setIsTodoEditable] = useState(false)
-    const [todoMsg,setTodoMsg] = useState(todos.todo)
+    const [todoMsg,setTodoMsg] = useState(todo.todo)
     const {updateTodo,deleteTodo,toggleComplete} = useTodo()
 
-    
+
 
     const edit = () => {
 
-        updateTodo(todos.id,{...todos,todo:todoMsg})
+        updateTodo(todo.id,{...todo,todo:todoMsg})
         setIsTodoEditable(false)
     }
 
     const togglecompleted = () => {
 
-        toggleComplete(todos.id)    
+        toggleComplete(todo.id)    
 
     }
 
@@ -27,11 +27,11 @@ function TodoItem({todos}) {
 
   return (
     <div  className='todoitem'>
-        <input disabled={isTodoEditable} type="checkbox" checked={todos.completed} onChange={togglecompleted} name="" id="" />
-        <input type="text" className={ todos.completed ? 'strike':''}  value={todoMsg}  onChange={(e) => setTodoMsg(e.target.value)}  name="" id="" readOnly={!isTodoEditable}   />
-        <button disabled={todos.completed} onClick={() => {
+        <input disabled={isTodoEditable} type="checkbox" checked={todo.completed} onChange={togglecompleted} name="" id="" />
+        <input type="text" className={ todo.completed ? 'strike':''}  value={todoMsg}  onChange={(e) => setTodoMsg(e.target.value)}  name="" id="" readOnly={!isTodoEditable}   />
+        <button disabled={todo.completed} onClick={() => {
 
-            if (todos.completed) return 
+            if (todo.completed) return 
 
             if (isTodoEditable){
 
@@ -44,7 +44,7 @@ function TodoItem({todos}) {
             }
         }}>{isTodoEditable ? '📁' : '✏️'}</button>
         <button onClick={() => {
-            deleteTodo(todos.id)
+            deleteTodo(todo.id)
 
         }}>❌</button>
       </div>
